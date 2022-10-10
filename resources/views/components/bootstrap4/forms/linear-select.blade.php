@@ -1,4 +1,3 @@
-@props(['options' => null])
 @php
   $exceptElementsOnInput = [
     'label-class',
@@ -49,7 +48,7 @@
       {!! ($name != false) ? "name=\"{$name}\"" : '' !!}
       {!! $attributes->except($exceptElementsOnInput) !!}
       {!! $attributes->get('select-jattributes') !!}>    
-        {{ $options }}
+        {{ $slot }}
     </select>
 
     @if ($attributes->has('append') || isset($append))
@@ -59,7 +58,7 @@
     @endif
   </div>
 
-  {{ $slot }}
+  {{ $span ?? ''}}
   
 </div>
 
