@@ -179,7 +179,7 @@ You can use js frameworks with the components, this is a simple example with the
 
 ### Author 
 
-Guillermo Rodriguez
+Guillermo Rodriguez | guillermo.rodriguez.developer@gmail.com
 
 ### Version 
 
