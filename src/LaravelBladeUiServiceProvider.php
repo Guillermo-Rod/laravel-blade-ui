@@ -10,7 +10,7 @@ class LaravelBladeUiServiceProvider extends ServiceProvider
 {
     public const PACKAGE_NAME = 'laravel-blade-ui';
     public const AUTHOR       = 'Guillermo Rodriguez';
-    public const VERSION      = 'v0.1.0-bootstrap4';
+    public const VERSION      = 'v1.0.0-bootstrap4';
 
     /**
      * Register services.
