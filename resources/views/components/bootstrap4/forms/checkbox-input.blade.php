@@ -11,11 +11,11 @@
   ];
 @endphp
 
-<div>
-    <div 
-        class="custom-control custom-checkbox {{ $attributes->get('container-class') }}" 
-        {!! $attributes->get('hidden') !!}
-        {{ $attributes->get('container-jattributes') }}>
+<div {!! $attributes->get('hidden') !!}
+    {{ $attributes->get('container-jattributes') }}
+    class="{{ $attributes->get('container-class') }}">
+    
+    <div class="custom-control custom-checkbox">
     
         {{-- Errors --}}
         @if ($enableErrors == true)
@@ -47,7 +47,7 @@
             </label>
         @endif
     </div>    
-    
+
     {{ $slot }}
 </div>
 
