@@ -3,6 +3,7 @@
 use GuillermoRod\BladeUi\Components\Alerts\Alert;
 use GuillermoRod\BladeUi\Components\BladeUiComponent;
 use GuillermoRod\BladeUi\Components\Forms\Button;
+use GuillermoRod\BladeUi\Components\Forms\CheckboxInput;
 use GuillermoRod\BladeUi\Components\Forms\LinearInput;
 use GuillermoRod\BladeUi\Components\Forms\LinearSelect;
 use GuillermoRod\BladeUi\Components\Forms\LinearTextarea;
@@ -48,6 +49,7 @@ return [
         'simple-modal'    => SimpleModal::class,
         'table'           => Table::class,
         'button'          => Button::class,
-        'alert'           => Alert::class
+        'alert'           => Alert::class,
+        'checkbox-input'  => CheckboxInput::class
     ]
 ];

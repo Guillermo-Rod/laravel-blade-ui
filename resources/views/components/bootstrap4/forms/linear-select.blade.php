@@ -20,16 +20,18 @@
 
   {{-- Label --}}
   @if ($label)  
-    <label class="{{ $attributes->get('label-class') }}" {!! $attributes->get('label-jattributes') !!}>
+    <label class="{{ $attributes->get('label-class') }}" {{ $attributes->get('label-jattributes') }}>
       {!! $label !!} <span class="text-danger"> {{ $attributes->get('required') == true || $extraAttributes->has('requiredTextOnly') ? '*' : null }}</span>
     </label>
   @endif
   
   {{-- Errors --}}
   @if ($enableErrors == true)
-    <span class="text-danger {{ $attributes->get('error-class') }}" {!! $attributes->get('error-jattributes') !!}>
-      @error($name ?? $attributes->whereStartsWith('wire:model')->first())<span>{{ $message }}</span>@enderror
-    </span>
+    @error($name ?? $attributes->whereStartsWith('wire:model')->first())
+      <span class="text-danger {{ $attributes->get('error-class') }}" {{ $attributes->get('error-jattributes') }}>
+          {{ $message }}
+      </span>
+    @enderror
   @endif
 
   {{-- INPUT --}}
@@ -45,9 +47,9 @@
 
     <select
       class="form-control {{ $attributes->get('class') }}"
-      {!! ($name != false) ? "name=\"{$name}\"" : '' !!}
-      {!! $attributes->except($exceptElementsOnInput) !!}
-      {!! $attributes->get('select-jattributes') !!}>    
+      {!! ($name != false) ? "name={$name}" : '' !!}
+      {{ $attributes->except($exceptElementsOnInput) }}
+      {{ $attributes->get('select-jattributes') }}>
         {{ $slot }}
     </select>
 

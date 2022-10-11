@@ -22,8 +22,10 @@ trait InputCastings
         $booleanValue = $value;
 
         if (Str::contains((string) $value, ':text-only')) {            
-            $booleanValue = explode(':text-only', $value)[0];
-            $data['extraAttributes']['requiredTextOnly'] = true;
+            $booleanValue = filter_var(explode(':text-only', $value)[0], FILTER_VALIDATE_BOOLEAN);
+            if ($booleanValue) {
+                $data['extraAttributes']['requiredTextOnly'] = true;                
+            }
             $value = false;
         }else{
             $value = filter_var($value, FILTER_VALIDATE_BOOLEAN);

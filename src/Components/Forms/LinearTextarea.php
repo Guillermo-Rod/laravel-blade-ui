@@ -34,8 +34,11 @@ class LinearTextarea extends BladeUiComponent
         $this->label = $label;
         $this->enableErrors = $enableErrors;
         $this->theme = $theme;
+        
         if ($name != null) {
             $this->value = old($name, $value ?? '');
+        }else {
+            $this->value = $value;
         }
 
         $this->addTraitCastings('JsonAttributeCastings', [

@@ -21,16 +21,18 @@
 
   {{-- Label --}}
   @if ($label)  
-    <label class="{{ $attributes->get('label-class') }}" {!! $attributes->get('label-jattributes') !!}>
+    <label class="{{ $attributes->get('label-class') }}" {{ $attributes->get('label-jattributes') }}>
       {!! $label !!} <span class="text-danger"> {{ $attributes->get('required') == true || $extraAttributes->has('requiredTextOnly') ? '*' : null }}</span>
     </label>
   @endif
   
   {{-- Errors --}}
   @if ($enableErrors == true)
-    <span class="text-danger {{ $attributes->get('error-class') }}" {!! $attributes->get('error-jattributes') !!}>
-      @error($name ?? $attributes->whereStartsWith('wire:model')->first())<span>{{ $message }}</span>@enderror
-    </span>
+    @error($name ?? $attributes->whereStartsWith('wire:model')->first())
+      <span class="text-danger {{ $attributes->get('error-class') }}" {{ $attributes->get('error-jattributes') }}>
+          {{ $message }}
+      </span>
+    @enderror
   @endif
 
   {{-- INPUT --}}
@@ -48,10 +50,10 @@
       type="{{ $type }}"        
       class="form-control {{ $attributes->get('class') }}"
       placeholder="{{ $attributes->get('placeholder') }} {{ $extraAttributes->get('requiredPlaceholder') }}"
-      {!! ($name != false) ? "name=\"{$name}\"" : '' !!}       
-      {!! ($value != null) ? "value=\"{$value}\"" : '' !!}        
-      {!! $attributes->except($exceptElementsOnInput) !!}
-      {!! $attributes->get('input-jattributes') !!}>    
+      {!! ($name != false) ? "name={$name}" : '' !!}       
+      {!! ($value != null) ? "value={$value}" : '' !!}        
+      {{ $attributes->except($exceptElementsOnInput) }}
+      {{ $attributes->get('input-jattributes') }}>
 
     @if ($attributes->has('append') || isset($append))
       <div class="input-group-append">

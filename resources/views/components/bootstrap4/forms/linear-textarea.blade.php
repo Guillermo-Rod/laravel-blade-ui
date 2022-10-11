@@ -20,16 +20,18 @@
 
   {{-- Label --}}
   @if ($label)      
-    <label class="{{ $attributes->get('label-class') }}" {!! $attributes->get('label-jattributes') !!}>
+    <label class="{{ $attributes->get('label-class') }}" {{ $attributes->get('label-jattributes') }}>
       {!! $label !!} <span class="text-danger"> {{ $attributes->get('required') == true || $extraAttributes->has('requiredTextOnly') ? '*' : null }}</span>
     </label>
   @endif
   
   {{-- Errors --}}
   @if ($enableErrors == true)
-    <span class="text-danger {{ $attributes->get('error-class') }}" {!! $attributes->get('error-jattributes') !!}>
-      @error($name ?? $attributes->whereStartsWith('wire:model')->first())<span>{{ $message }}</span>@enderror
-    </span>
+    @error($name ?? $attributes->whereStartsWith('wire:model')->first())
+      <span class="text-danger {{ $attributes->get('error-class') }}" {{ $attributes->get('error-jattributes') }}>
+          {{ $message }}
+      </span>
+    @enderror
   @endif
 
   {{-- INPUT --}}
@@ -45,9 +47,9 @@
       class="form-control {{ $attributes->get('class') }}"
       placeholder="{{ $attributes->get('placeholder') }} {{ $extraAttributes->get('requiredPlaceholder') }}"
       rows="{!! $attributes->get('rows',2) !!}"
-      {!! ($name != false) ? "name=\"{$name}\"" : '' !!}
-      {!! $attributes->get('textarea-jattributes') !!}
-      {!! $attributes->except($exceptElementsOnInput) !!}>{!! $value ?? null !!}</textarea>
+      {!! ($name != false) ? "name={$name}" : '' !!}
+      {{ $attributes->get('textarea-jattributes') }}
+      {{ $attributes->except($exceptElementsOnInput) }}>{{ $value ?? null }}</textarea>
 
     @if ($attributes->has('append') || isset($append))
       <div class="input-group-append">
