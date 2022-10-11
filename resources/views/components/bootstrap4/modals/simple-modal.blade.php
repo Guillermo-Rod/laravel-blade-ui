@@ -42,7 +42,7 @@
         {{ $attributes->get('dialog-jattributes') }}>
         
         {{-- Content --}}
-        <div class="modal-content {{ $attributes->get('content-class') }}"
+        <div class="modal-content p-2 {{ $attributes->get('content-class') }}"
             {{ $attributes->get('content-jattributes') }}>
             
             {{-- Header --}}
