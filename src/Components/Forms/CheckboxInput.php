@@ -34,7 +34,7 @@ class CheckboxInput extends BladeUiComponent
      *
      * @return void
      */
-    public function __construct($id, $name = null, $label = null, $checked = false, $enableErrors = true, $value = null, $theme = 'bootstrap4')
+    public function __construct($id, $name = null, $label = null, $checked = false, $enableErrors = false, $value = null, $theme = 'bootstrap4')
     {      
         $this->id           = $id;
         $this->name         = $name;

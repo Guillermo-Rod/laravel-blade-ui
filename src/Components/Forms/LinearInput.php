@@ -31,7 +31,7 @@ class LinearInput extends BladeUiComponent
      *
      * @return void
      */
-    public function __construct($type = 'text', $name = null, $label = null, $enableErrors = true, $value = null, $theme = 'bootstrap4')
+    public function __construct($type = 'text', $name = null, $label = null, $enableErrors = false, $value = null, $theme = 'bootstrap4')
     {      
         $this->type  = $type;
         $this->name  = $name;

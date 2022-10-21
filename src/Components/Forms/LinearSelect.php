@@ -25,7 +25,7 @@ class LinearSelect extends BladeUiComponent
      *
      * @return void
      */
-    public function __construct($name = null, $label = null, $enableErrors = true, $theme = 'bootstrap4')
+    public function __construct($name = null, $label = null, $enableErrors = false, $theme = 'bootstrap4')
     {      
         $this->name         = $name;
         $this->label        = $label;

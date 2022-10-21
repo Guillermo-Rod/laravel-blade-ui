@@ -28,7 +28,7 @@ class LinearTextarea extends BladeUiComponent
      *
      * @return void
      */
-    public function __construct($name = null, $label = null, $enableErrors = true, $value = null, $theme = 'bootstrap4')
+    public function __construct($name = null, $label = null, $enableErrors = false, $value = null, $theme = 'bootstrap4')
     {      
         $this->name  = $name;
         $this->label = $label;
