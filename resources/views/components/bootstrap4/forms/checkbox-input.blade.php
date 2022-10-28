@@ -28,7 +28,7 @@
     
         <input 
             type="checkbox" 
-            {!! ($name != false) ? "name={$name}" : '' !!}
+            {!! ($name != null) ? "name={$name}" : '' !!}
             {!! ($value != null) ? "value={$value}" : '' !!}
             {!! $checked ? "checked={$checked}" : '' !!}
             {!! $id ? "id={$id}" : '' !!}

@@ -50,7 +50,7 @@
       type="{{ $type }}"        
       class="form-control {{ $attributes->get('class') }}"
       placeholder="{{ $attributes->get('placeholder') }} {{ $extraAttributes->get('requiredPlaceholder') }}"
-      {!! ($name != false) ? "name={$name}" : '' !!}       
+      {!! ($name != null) ? "name={$name}" : '' !!}       
       {!! ($value != null) ? "value={$value}" : '' !!}        
       {{ $attributes->except($exceptElementsOnInput) }}
       {{ $attributes->get('input-jattributes') }}>

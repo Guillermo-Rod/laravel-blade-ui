@@ -143,7 +143,7 @@ class BladeUiComponent extends Component
                     $value = $data['attributes'][$attribute];
                 }
 
-                if (isset($value)) {
+                if ($value != null) {
                     // $result = $value;
 
                     // if ($castRule instanceof Closure) {

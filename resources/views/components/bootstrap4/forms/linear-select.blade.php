@@ -47,7 +47,7 @@
 
     <select
       class="form-control {{ $attributes->get('class') }}"
-      {!! ($name != false) ? "name={$name}" : '' !!}
+      {!! ($name != null) ? "name={$name}" : '' !!}
       {{ $attributes->except($exceptElementsOnInput) }}
       {{ $attributes->get('select-jattributes') }}>
         {{ $slot }}
