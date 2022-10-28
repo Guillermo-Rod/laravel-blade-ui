@@ -47,7 +47,7 @@
       class="form-control {{ $attributes->get('class') }}"
       placeholder="{{ $attributes->get('placeholder') }} {{ $extraAttributes->get('requiredPlaceholder') }}"
       rows="{!! $attributes->get('rows',2) !!}"
-      {!! ($name != null) ? "name={$name}" : '' !!}
+      {!! ($name != null) ? "name='{$name}'" : '' !!}
       {{ $attributes->get('textarea-jattributes') }}
       {{ $attributes->except($exceptElementsOnInput) }}>{{ $value ?? null }}</textarea>
 

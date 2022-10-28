@@ -28,8 +28,8 @@
     
         <input 
             type="checkbox" 
-            {!! ($name != null) ? "name={$name}" : '' !!}
-            {!! ($value != null) ? "value={$value}" : '' !!}
+            {!! ($name != null) ? "name='{$name}'" : '' !!}
+            {!! ($value != null) ? "value='{$value}'" : '' !!}
             {!! $checked ? "checked={$checked}" : '' !!}
             {!! $id ? "id={$id}" : '' !!}
             {{ $attributes->except($exceptElementsOnInput) }}
