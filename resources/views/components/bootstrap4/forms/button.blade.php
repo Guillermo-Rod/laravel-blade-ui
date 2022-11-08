@@ -1,5 +1,5 @@
 
-<button type="{{ $type }}" style="display:flex; gap: 4px; {{ $attributes->get('style') }}" class="btn {{ $attributes->get('class') }}" {{ $attributes->except(['class','style']) }}>
+<button type="{{ $type }}" style="gap: 4px; {{ $attributes->get('style') }}" class="btn d-flex align-items-center {{ $attributes->get('class') }}" {{ $attributes->except(['class','style']) }}>
     @if ($icon) 
         <i class="{{ $icon }}"></i>  
     @elseif ($htmlIcon)
